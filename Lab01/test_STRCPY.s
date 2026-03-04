@@ -52,46 +52,12 @@ _start:
     //   5. Loop back
     
 copy_loop:
-    // -------------------------------------------------------------------------
-    // TODO #1: Load a byte from the source address [X0] into W2
-    // Syntax: LDRB Wt, [Xn]   (Load Register Byte)
-    // -------------------------------------------------------------------------
-    
-    // YOUR CODE HERE
-    
-    // -------------------------------------------------------------------------
-    // TODO #2: Store the byte from W2 to the destination address [X1]
-    // Syntax: STRB Wt, [Xn]   (Store Register Byte)
-    // -------------------------------------------------------------------------
-    
-    // YOUR CODE HERE
-    
-    // -------------------------------------------------------------------------
-    // TODO #3: Check if the byte was the null terminator (0)
-    // If W2 == 0, branch to 'done'
-    // Syntax: CBZ Wt, label   (Compare and Branch if Zero)
-    // -------------------------------------------------------------------------
-    
-    // YOUR CODE HERE
-    
-    // -------------------------------------------------------------------------
-    // TODO #4: Increment both pointers to the next byte
-    // You need TWO ADD instructions (one for X0, one for X1)
-    // Syntax: ADD Xd, Xn, #1
-    // -------------------------------------------------------------------------
-    
-    // YOUR CODE HERE (two lines)
-    
-    // -------------------------------------------------------------------------
-    // TODO #5: Loop back to copy the next character
-    // Syntax: B label   (Branch - unconditional jump)
-    // -------------------------------------------------------------------------
-    
-    // YOUR CODE HERE
-
-    // =========================================================================
-    // STEP 3: Signal Completion (Already done for you)
-    // =========================================================================
+    LDRB    W2, [X0]      
+    STRB    W2, [X1]      
+    CBZ     W2, done    
+    ADD     X0, X0, #1     
+    ADD     X1, X1, #1    
+    B       copy_loop  
 done:
     // When your loop exits (after copying the null terminator),
     // execution reaches here and YIELD signals success.
