@@ -2,8 +2,8 @@
 // CS 271 Computer Architecture - Lab 00: Introduction to ARM Assembly
 // Purdue University Fort Wayne
 // =============================================================================
-// STUDENT NAME: ___________________
-// DATE:         ___________________
+// STUDENT NAME: Patrick Rall 
+// DATE:        01/30/2026 
 // =============================================================================
 //
 // LEARNING OBJECTIVES:
@@ -52,6 +52,7 @@ _start:
     //
     // YOUR CODE HERE:
 
+    MOV     X3, #25
 
     // -------------------------------------------------------------------------
     // EXERCISE 2: Perform addition
@@ -61,6 +62,7 @@ _start:
     //
     // YOUR CODE HERE:
 
+    ADD     X4, X2, X3
 
     // -------------------------------------------------------------------------
     // EXERCISE 3: Perform subtraction
@@ -70,6 +72,8 @@ _start:
     // After this instruction, X5 should equal 5 (because 10 - 5 = 5)
     //
     // YOUR CODE HERE:
+
+    SUB     X5, X0, X1
 
 
     // -------------------------------------------------------------------------
@@ -81,6 +85,10 @@ _start:
     //
     // YOUR CODE HERE:
 
+     MOV    X7, #25
+     MOV    X8, #75
+     SUB    X9, X8, X7
+     ADD    X6, X8, X7
 
     // =========================================================================
     // PROGRAM TERMINATION
@@ -94,13 +102,13 @@ _start:
 // =============================================================================
 // After running 'make sim_lab00', open the waveform viewer (Surfer) and verify:
 //
-//   [ ] X0 = 10  (0x0A in hexadecimal)
-//   [ ] X1 = 5   (0x05)
-//   [ ] X2 = 15  (0x0F)
-//   [ ] X3 = 25  (0x19)  ← Your Exercise 1
-//   [ ] X4 = 40  (0x28)  ← Your Exercise 2
-//   [ ] X5 = 5   (0x05)  ← Your Exercise 3
-//   [ ] X6 = 100 (0x64)  ← Your Exercise 4
+//   [*] X0 = 10  (0x0A in hexadecimal)
+//   [*] X1 = 5   (0x05)
+//   [*] X2 = 15  (0x0F)
+//   [*] X3 = 25  (0x19)  ← Your Exercise 1
+//   [*] X4 = 40  (0x28)  ← Your Exercise 2
+//   [*] X5 = 5   (0x05)  ← Your Exercise 3
+//   [*] X6 = 100 (0x64)  ← Your Exercise 4
 //
 // If you see "[EDUCORE LOG]: Apollo has landed" in the terminal,
 // your program executed without errors!
